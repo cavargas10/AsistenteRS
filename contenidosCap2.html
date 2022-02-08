@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Responsive Navbar | CodingNepal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+</head>
+
+<body>
+    <nav>
+        <label class="logo">RLearning</label>
+        <ul>
+            <li><a class="active" href="#">PRINCIPAL</a></li>
+            <li><a href="#">ACERCA DE</a></li>
+            <li><a href="capitulos.html">CAPITULOS</a></li>
+            <li><a href="#">TUTORIALES</a></li>
+            <li><a href="#">JUEGOS</a></li>
+            <li><a href="#">RConsola</a></li>
+
+        </ul>
+    </nav>
+
+    <section class="introduccion">
+        <h1><br>2. TIPOS DE OBJETOS</h1>
+        <h2 class="origen">2.1 Variables</h2>
+        <p>Las variables sirven para almacenar un valor que luego vamos a utilizar en algún procedimiento.
+            Para hacer la asignación de un valor a alguna variable se utiliza el operador <- entre el valor y el nombre
+                de la variable. A continuación un ejemplo sencillo.</p><br>
+
+                <code>
+                    x <- 5<br>
+                    2 * x + 3<br><br>
+                ## [1] 13 <br>
+                </code>
+
+                <br>
+                <p>En el siguiente ejemplo se crea la variable pais y se almacena el nombre Colombia, luego
+                    se averigua el número de caracteres de la variable pais.</p><br>
+
+                <code>
+                            pais <- "Colombia"<br>
+                            nchar(pais)<br><br>
+                            ## [1] 8<br>
+                        </code>
+    </section>
+
+    <section class="introduccion">
+        <h2 class="origen">2.2 Vectores</h2>
+        <p>Los vectores vectores son arreglos ordenados en los cuales se puede almacenar información de tipo numérico
+            (variable cuantitativa), alfanumérico (variable cualitativa) o lógico (TRUE o FALSE), pero no mezclas de
+            éstos.
+            La función de R para crear un vector es c() y que significa concatenar; dentro de los paréntesis de esta
+            función
+            se ubica la información a almacenar. Una vez construído el vector se acostumbra a etiquetarlo con un nombre
+            corto
+            y representativo de la información que almacena, la asignación se hace por medio del operador <- entre el
+                nombre y el vector.</p><br>
+
+                <p>A continuación se presenta un ejemplo de cómo crear tres vectores que contienen las respuestas de
+                    cinco personas a
+                    tres preguntas que se les realizaron.</p><br>
+
+                <code>
+                    edad <- c(15, 19, 13, NA, 20)<br><br>
+                    deporte <- c(TRUE, TRUE, NA, FALSE, TRUE)<br><br>
+                    comic_fav <- c(NA, 'Superman', 'Batman', NA, 'Batman')<br><br>
+                </code>
+
+                <p>El vector edad es un vector cuantitativo y contiene las edades de las 5 personas. En la cuarta
+                    posición
+                    del vector se colocó el símbolo NA que significa Not Available debido a que no se registró la edad
+                    para
+                    esa persona. Al hacer una asignación se acostumbra a dejar un espacio antes y después del operador
+                    <- de asignación. El segundo vector es llamado deporte y es un vector lógico que almacena las
+                        respuestas a la pregunta de si la persona practica deporte, nuevamente aquí hay un NA para la
+                        tercera persona. El último vector comic_fav contiene la información del cómic favorito de cada
+                        persona, como esta variable es cualitativa es necesario usar las comillas ' ' para encerrar las
+                        respuestas.</p><br>
+
+                        <p>Cuando se usa NA para representar una información Not Available no se deben usar comillas.
+                        </p><br>
+
+                        <p>Es posible usar comillas sencillas 'foo' o comillas dobles "foo" para ingresar valores de
+                            una variable cualitativa.
+                        </p><br>
+
+                        <p>Si se desea ver lo que está almacenado en cada uno de estos vectores, se debe escribir en
+                            la consola de R el nombre de uno de los objetos y luego se presiona la tecla enter o intro,
+                            al realizar esto lo que se obtiene se muestra a continuación.</p><br>
+                        <code>
+                                edad<br><br>
+                                ## [1] 15 19 13 NA 20<br><br>
+                                deporte<br><br>
+                                ## [1]  TRUE  TRUE    NA FALSE  TRUE<br><br>
+                                comic_fav<br><br>
+                                ## [1] NA         "Superman" "Batman"   NA   "Batman"<br><br>
+                            </code>
+
+                        <p>Una variable es un vector de longitud uno.</p><br>
+                        <h2 class="origen">2.2.1 ¿Cómo extraer elementos de un vector?</h2>
+                        <p>Para extraer un elemento almacenado dentro un vector se usan los corchetes [] y
+                            dentro de ellos la posición o posiciones que interesan.</p><br>
+                        <h2 class="origen">Ejemplo</h2>
+                        <p>Si queremos extraer la edad de la tercera persona escribimos el nombre del vector
+                            y luego [3] para indicar la tercera posición de edad, a continuación el código.</p><br>
+                        <code>
+                edad[3]<br><br>
+                ## [1] 13<br><br>
+            </code>
+                        <p>Si queremos conocer el cómic favorito de la segunda y quinta persona, escribimos el nombre
+                            del vector y luego, dentro de los corchetes, escribimos otro vector con las posiciones 2 y 5
+                            que
+                            nos interesan así [c(2, 5)], a continuación el código.</p><br>
+                        <code>
+                    comic_fav[c(2, 5)]<br><br>
+                    ## [1] "Superman" "Batman"<br><br>
+                </code>
+                        <p>Si nos interesan las respuestas de la práctica de deporte, excepto la de la persona 3, usamos
+                            [-3] luego
+                            del nombre del vector para obtener todo, excepto la tercera posición.</p><br>
+                        <code>
+                        deporte[-3]<br><br>
+                        ## [1]  TRUE  TRUE FALSE  TRUE<br><br>
+                    </code>
+                        <p>Si desea extraer varios posiciones de un vector NUNCA escriba esto: mivector[2, 5, 7]. Tiene
+                            que crear un
+                            vector
+                            con las posiciones y luego colocarlo dentro de los corchetes así: mivector[c(2, 5, 7)]</p>
+                        <br>
+
+    </section>
+
+    <section class="introduccion">
+        <h2 class="origen">2.3 Matrices</h2>
+        <p>Las matrices son arreglos rectangulares de filas y columnas con información numérica, alfanumérica o lógica.
+            Para construir una matriz se usa la función matrix( ). Por ejemplo, para crear una matriz de 4 filas y 5
+            columnas
+            (de dimensión 4×5) con los primeros 20 números positivos se escribe el código siguiente en la consola.</p>
+        <br>
+
+        <code>
+                mimatriz <- matrix(data=1:20, nrow=4, ncol=5, byrow=FALSE)<br><br>
+             </code>
+
+        <p>El argumento data de la función sirve para indicar los datos que se van a almacenar en la matriz, los
+            argumentos nrow
+            y ncol sirven para definir la dimensión de la matriz y por último el argumento byrow sirve para indicar si
+            la información
+            contenida en data se debe ingresar por filas o no. Para observar lo que quedó almacenado en el objeto
+            mimatriz se escribe
+            en la consola el nombre del objeto seguido de la tecla enter o intro.</p><br>
+
+        <code>
+                    mimatriz<br><br>
+                    ##      [,1] [,2] [,3] [,4] [,5]<br>
+                    ## [1,]    1    5    9   13   17<br>
+                    ## [2,]    2    6   10   14   18<br>
+                    ## [3,]    3    7   11   15   19<br>
+                    ## [4,]    4    8   12   16   20<br><br>
+                 </code>
+        <h2 class="origen">2.3.1 ¿Cómo extraer elementos de una matriz?</h2>
+        <p>Al igual que en el caso de los vectores, para extraer elementos almacenados dentro de una matriz se usan los
+            corchetes [ , ]
+            y dentro, separado por una coma, el número de fila(s) y el número de columna(s) que nos interesan.</p><br>
+        <h2 class="origen">Ejemplo</h2>
+        <p>Si queremos extraer el valor almacenado en la fila 3 y columna 4 usamos el siguiente código.</p><br>
+        <code>
+                     mimatriz[3, 4]<br><br>
+                     ## [1] 15<br><br>
+                 </code>
+
+        <p>
+            Si queremos recuperar toda la fila 2 usamos el siguiente código. </p><br>
+
+        <code>
+                         mimatriz[2, ]  # No se escribe nada luego de la coma <br><br>
+                         ## [1]  2  6 10 14 18 <br><br>
+                     </code>
+
+        <p>Si queremos recuperar toda la columna 5 usamos el siguiente código.</p><br>
+
+        <code>
+                         mimatriz[, 5]  # No se escribe nada antes de la coma<br><br>
+                         ## [1] 17 18 19 20<br><br>
+                     </code>
+
+        <p>Si queremos recuperar la matriz original sin las columnas 2 y 4 usamos el siguiente código.</p><br>
+
+        <code>
+                         mimatriz[, -c(2, 4)]  # Las columnas como vector<br><br>
+                         ##      [,1] [,2] [,3]<br>
+                         ## [1,]    1    9   17<br>
+                         ## [2,]    2   10   18<br>
+                         ## [3,]    3   11   19<br>
+                         ## [4,]    4   12   20<br><br>
+                     </code>
+        <p>Si queremos recuperar la matriz original sin la fila 1 ni columna 3 usamos el siguiente código.</p><br>
+
+        <code>
+                         mimatriz[-1, -3]  # Signo de menos para eliminar<br><br>
+                         ##      [,1] [,2] [,3] [,4]<br>
+                         ## [1,]    2    6   14   18<br>
+                         ## [2,]    3    7   15   19<br>
+                         ## [3,]    4    8   16   20<br>
+                     </code>
+    </section>
+
+    <section class="introduccion">
+        <h2 class="origen">2.4 Arreglos</h2>
+        <p>Un arreglo es una matriz de varias dimensiones con información numérica, alfanumérica o lógica. Para
+            construir
+            una arreglo se usa la función array( ). Por ejemplo, para crear un arreglo de 3×4×2 con las primeras 24
+            letras
+            minúsculas del alfabeto se escribe el siguiente código.</p><br>
+
+        <code>
+                miarray <- array(data=letters[1:24], dim=c(3, 4, 2))<br><br>
+            </code>
+
+        <p>El argumento data de la función sirve para indicar los datos que se van a almacenar en el arreglo y el
+            argumento
+            dim sirve para indicar las dimensiones del arreglo. Para observar lo que quedó almacenado en el objeto
+            miarray
+            se escribe en la consola lo siguiente.</p><br>
+
+        <code>
+                    miarray<br><br>
+                    ## , , 1<br>
+                    ## <br>
+                    ##      [,1] [,2] [,3] [,4]<br>
+                    ## [1,] "a"  "d"  "g"  "j" <br>
+                    ## [2,] "b"  "e"  "h"  "k" <br>
+                    ## [3,] "c"  "f"  "i"  "l" <br>
+                    ## <br>
+                    ## , , 2 <br>
+                    ## <br>
+                    ##      [,1] [,2] [,3] [,4]<br>
+                    ## [1,] "m"  "p"  "s"  "v" <br>
+                    ## [2,] "n"  "q"  "t"  "w" <br>
+                    ## [3,] "o"  "r"  "u"  "x"<br><br>
+                </code>
+        <h2 class="origen">2.4.1 ¿Cómo extraer elementos de un arreglo?</h2>
+        <p>Para recuperar elementos almacenados en un arreglo se usan también corchetes, y
+            dentro de los corchetes, las coordenadas del objeto de interés.</p><br>
+        <h2 class="origen">Ejemplo</h2>
+        <p>Si queremos extraer la letra almacenada en la fila 1 y columna 3 de la segunda
+            capa de miarray usamos el siguiente código.</p><br>
+        <code>
+            miarray[1, 3, 2]  # El orden es importante<br><br>
+            ## [1] "s"<br><br>
+                </code>
+        <p>Si queremos extraer la segunda capa completa usamos el siguiente código.</p><br>
+        <code>
+                    miarray[,, 2]  # No se coloca nada en las primeras posiciones <br><br>
+                    ##      [,1] [,2] [,3] [,4]<br>
+                    ## [1,] "m"  "p"  "s"  "v" <br>
+                    ## [2,] "n"  "q"  "t"  "w" <br>
+                    ## [3,] "o"  "r"  "u"  "x"<br><br>
+                </code>
+        <p>Si queremos extraer la tercera columna de todas las capas usamos el siguiente código.</p><br>
+        <code>
+                    miarray[, 3,]  # No se coloca nada en las primeras posiciones <br><br>
+                    ##      [,1] [,2]<br>
+                    ## [1,] "g"  "s" <br>
+                    ## [2,] "h"  "t" <br>
+                    ## [3,] "i"  "u"<br><br>
+                </code>
+    </section>
+
+
+    <section class="introduccion">
+        <h2 class="origen">2.5 Marco de datos</h2>
+        <p>El marco de datos marco de datos o data frame es uno de los objetos más utilizados porque permite agrupar
+            vectores con información de diferente tipo (numérica, alfanumérica o lógica) en un mismo objeto, la única
+            restricción es que los vectores deben tener la misma longitud. Para crear un marco de datos se usa la
+            función
+            data.frame( ), como ejemplo vamos a crear un marco de datos con los vectores edad, deporte y comic_fav
+            definidos
+            anteriormente.</p><br>
+
+        <code>
+                mimarco <- data.frame(edad, deporte, comic_fav)<br><br>
+            </code>
+
+        <p>Una vez creado el objeto mimarco podemos ver el objeto escribiendo su nombre en la consola, a continuación
+            se muestra lo que se obtiene.</p>
+        <code>
+                    mimarco <br><br>
+                    ##   edad deporte comic_fav <br>
+                    ## 1   15    TRUE      <NA> <br>
+                    ## 2   19    TRUE  Superman <br>
+                    ## 3   13      NA    Batman <br>
+                    ## 4   NA   FALSE      <NA> <br>
+                    ## 5   20    TRUE    Batman <br><br>
+                 </code>
+
+        <p>De la salida anterior vemos que el marco de datos tiene 3 variables (columnas) cuyos nombres coinciden
+            con los nombres de los vectores creados anteriormente, los números consecutivos al lado izquierdo son
+            sólo de referencia y permiten identificar la información para cada persona en la base de datos.</p><br>
+        <h2 class="origen">2.5.1 ¿Cómo extraer elementos de un marco de datos?</h2>
+        <p>Para recuperar las variables (columnas) almacenadas en un marco de datos se puede usar el operador $,
+            corchetes simples [] o corchetes dobles [[]]. A continuación algunos ejemplos para entender las
+            diferencias entre estas opciones.</p><br>
+        <h2 class="origen">Ejemplo</h2>
+        <p>Si queremos extraer la variable deporte del marco de datos mimarco como un vector usamos el siguiente código.
+        </p><br>
+        <code>
+            mimarco$deporte  # Se recomienda si el nombre es corto<br><br>
+            ## [1]  TRUE  TRUE    NA FALSE  TRUE<br><br>
+        </code>
+        <p>Otra forma de recuperar la variable deporte como vector es indicando el número de la columna donde se
+            encuentra la variable.</p><br>
+        <code>
+            mimarco[, 2]  # Se recomienda si recordamos su ubicacion<br><br>
+            ## [1]  TRUE  TRUE    NA FALSE  TRUE<br><br>
+        </code>
+        <p>Otra forma de extraer la variable deporte como vector es usando [[]] y dentro el nombre de la variable.</p>
+        <br>
+        <code>
+            mimarco[["deporte"]]<br><br>
+            ## [1]  TRUE  TRUE    NA FALSE  TRUE<br><br>
+        </code>
+        <p>Si usamos mimarco["deporte"] el resultado es la variable deporte pero en forma de marco de datos, no en forma
+            vectorial.</p><br>
+        <code>
+    mimarco["deporte"]<br><br>
+    ##   deporte<br>
+    ## 1    TRUE<br>
+    ## 2    TRUE<br>
+    ## 3      NA<br>
+    ## 4   FALSE<br>
+    ## 5    TRUE<br><br>
+</code>
+        <p>Si queremos extraer un marco de datos sólo con las variables deporte y edad podemos usar el siguiente código.
+        </p><br>
+        <code>
+    mimarco[c("deporte", "edad")]<br><br>
+    ##   deporte edad<br>
+    ## 1    TRUE   15<br>
+    ## 2    TRUE   19<br>
+    ## 3      NA   13<br>
+    ## 4   FALSE   NA<br>
+    ## 5    TRUE   20<br><br>
+  </code>
+        <p>Por otra, si queremos la edad de las personas que están en las posiciones 2 hasta 4 usamos el siguiente
+            código.</p><br>
+        <code>
+    mimarco[2:4, 1]<br><br>
+    ## [1] 19 13 NA<br><br>
+  </code>
+        <h2 class="origen">2.5.2 ¿Cómo extraer subconjuntos de un marco de datos?</h2>
+        <p>Para extraer partes de un marco de datos se puede utilizar la función subset(x, subset, select). El parámetro
+            x sirve
+            para indicar el marco de datos original, el parámetro subset sirve para colocar la condición y el parámetro
+            select
+            sirve para quedarnos sólo con algunas de las variables del marco de datos. A continuación varios ejemplos de
+            la función
+            subset para ver su utilidad..</p><br>
+        <h2 class="origen">Ejemplos</h2>
+        <p>Si queremos el marco de datos mimarco sólo con las personas que SI practican deporte usamos el siguiente
+            código.</p><br>
+        <code>
+            subset(mimarco, subset=deporte == TRUE)<br><br>
+            ##   edad deporte comic_fav<br>
+            ## 1   15    TRUE      <NA><br>
+            ## 2   19    TRUE  Superman<br>
+            ## 5   20    TRUE    Batman<br><br>
+        </code>
+        <p>Si queremos el marco de datos mimarco sólo con las personas mayores o iguales a 17 años usamos el siguiente
+            código.</p><br>
+        <code>
+            subset(mimarco, subset=edad >= 17)<br><br>
+            ##   edad deporte comic_fav<br>
+            ## 2   19    TRUE  Superman<br>
+            ## 5   20    TRUE    Batman<br><br>
+        </code>
+        <p>Si queremos el submarco con deporte y comic de las personas menores de 20 años usamos el siguiente código.
+        </p><br>
+        <code>
+            subset(mimarco, subset=edad < 20, select=c('deporte', 'comic_fav'))<br><br>
+            ##   deporte comic_fav<br>
+            ## 1    TRUE      <NA><br>
+            ## 2    TRUE  Superman<br>
+            ## 3      NA    Batman<br><br>
+        </code>
+        <p>Si queremos el marco de datos mimarco sólo con las personas menores de 20 años y que SI practican deporte
+            usamos el siguiente código.</p><br>
+        <code>
+            subset(mimarco, subset=edad < 20 & deporte == TRUE)<br><br>
+            ##   edad deporte comic_fav<br>
+            ## 1   15    TRUE      <NA><br>
+            ## 2   19    TRUE  Superman<br><br>
+        </code>
+        <h2 class="origen">Ejemplo</h2>
+        <p>Leer la base de datos medidas del cuerpo disponible en este enlace
+            https://raw.githubusercontent.com/fhernanb/datos/master/medidas_cuerpo.
+            Extraer de esta base de datos una sub-base o subconjunto que contenga sólo la edad, peso, altura y sexo de
+            aquellos que miden más de 185 cm
+            y pesan más de 80 kg.</p><br>
+        <code>
+                url <- 'https://raw.githubusercontent.com/fhernanb/datos/master/medidas_cuerpo'<br>
+                dt1 <- read.table(url, header=T)<br>
+                dim(dt1)  # Para conocer la dimensión de la base original<br><br>
+                ## [1] 36  6<br><br>
+                dt2 <- subset(x=dt1, subset=altura > 185 & peso > 80,<br>
+                select=c('sexo', 'edad', 'peso', 'altura'))<br>
+                dt2  # Para mostrar la base de datos final<br><br>
+                ##      sexo edad peso altura<br>
+                ## 1  Hombre   43 87.3  188.0<br>
+                ## 6  Hombre   33 85.9  188.0<br>
+                ## 15 Hombre   30 98.2  190.5<br><br>
+            </code>
+        <p>Al almacenar la nueva base de datos en el objeto dt2 se puede manipular este nuevo objeto para realizar los
+            análisis de interés.</p><br>
+    </section>
+
+    <section class="introduccion">
+        <h1><br>2. TIPOS DE OBJETOS</h1>
+        <h2 class="origen">2.6 Listas</h2>
+        <p>Las listas son otro tipo de objeto muy usado para almacenar objetos de diferente tipo. La instrucción para
+            crear una lista
+            es list( ). A continuación vamos a crear una lista que contiene tres objetos: un vector con 5 números
+            aleatorios llamado
+            mivector, una matriz de dimensión 6×2 con los primeros doce números enteros positivos llamada matriz2 y el
+            tercer objeto
+            será el marco de datos mimarco creado en el apartado anterior. Las instrucciones para crear la lista
+            requerida se muestran
+            a continuación.</p><br>
+
+        <code>
+                    set.seed(12345)<br>
+                    mivector <- runif(n=5)<br>
+                    matriz2 <- matrix(data=1:12, ncol=6)<br>
+                    milista <- list(E1=mivector, E2=matriz2, E3=mimarco)<br><br>
+                </code>
+
+        <p>La función set.seed de la línea número 1 sirve para fijar la semilla de tal manera que los números aleatorios
+            generados en la segunda línea con la función runif sean siempre los mismos. En la última línea del código
+            anterior
+            se construye la lista, dentro de la función list se colocan los tres objetos mivector, matriz2 y mimarco.
+            Es posible colocarle un nombre especial a cada uno de los elementos de la lista, en este ejemplo se
+            colocaron
+            los nombres E1, E2 y E3 para cada uno de los tres elementos. Para observar lo que quedó almacenado en la
+            lista
+            se escribe milista en la consola y el resultado se muestra a continuación.</p><br>
+
+        <code>
+                    milista<br><br>
+                    ## $E1<br>
+                    ## [1] 0.7209039 0.8757732 0.7609823 0.8861246 0.4564810<br>
+                    ## <br>
+                    ## $E2<br>
+                    ##      [,1] [,2] [,3] [,4] [,5] [,6]<br>
+                    ## [1,]    1    3    5    7    9   11<br>
+                    ## [2,]    2    4    6    8   10   12<br>
+                    ## <br>
+                    ## $E3<br>
+                    ##   edad deporte comic_fav<br>
+                    ## 1   15    TRUE      <NA><br>
+                    ## 2   19    TRUE  Superman<br>
+                    ## 3   13      NA    Batman<br>
+                    ## 4   NA   FALSE      <NA><br>
+                    ## 5   20    TRUE    Batman<br><br>
+                        </code>
+        <h2 class="origen">2.6.1 ¿Cómo extraer elementos de una lista?</h2>
+        <p>Para recuperar los elementos almacenadas en una lista se usa el operador $, corchetes dobles [[]] o corchetes
+            sencillos []. A continuación unos ejemplos para entender cómo extraer elementos de una lista.</p><br>
+        <h2 class="origen">Ejemplo</h2>
+        <p>Si queremos la matriz almacenada con el nombre de E2 dentro del objeto milista se puede usar el siguiente
+            código.</p><br>
+        <code>
+            milista$E2<br><br>
+            ##      [,1] [,2] [,3] [,4] [,5] [,6]<br>
+            ## [1,]    1    3    5    7    9   11<br>
+            ## [2,]    2    4    6    8   10   12<br><br>
+        </code>
+        <p>Es posible indicar la posición del objeto en lugar del nombre, para eso se usan los corchetes dobles.</p><br>
+        <code>
+            milista[[2]]<br><br>
+            ##      [,1] [,2] [,3] [,4] [,5] [,6]<br>
+            ## [1,]    1    3    5    7    9   11<br>
+            ## [2,]    2    4    6    8   10   12<br>
+        </code>
+
+        <p>El resultado obtenido con milista$E2 y milista[[2]] es exactamente el mismo. Vamos ahora a solicitar la
+            posición
+            2 pero usando corchetes sencillos.</p><br>
+
+        <code>
+                milista[2]<br><br>
+                ## $E2  <br>
+                ##      [,1] [,2] [,3] [,4] [,5] [,6]<br>
+                ## [1,]    1    3    5    7    9   11<br>
+                ## [2,]    2    4    6    8   10   12<br><br>
+            </code>
+
+        <p>La apariencia de este último resultado es similar, no igual, al encontrado al usar $ y [[]]. Para ver la
+            diferencia
+            vamos a pedir la clase a la que pertenecen los tres últimos objetos usando la función class. A continuación
+            el código usado.</p><br>
+        <code>
+                    class(milista$E2)<br><br>
+                    ## [1] "matrix" "array"<br><br>
+                    class(milista[[2]])<br><br>
+                    ## [1] "matrix" "array"<br><br>
+                    class(milista[2])<br><br>
+                    ## [1] "list"<br><br>
+                 </code>
+        <p>De lo anterior se observa claramente que cuando usamos $ o [[]] el resultado es el objeto almacenado, una
+            matriz. Cuando usamos []
+            el resultado es una lista cuyo contenido es el objeto almacendado.</p><br>
+        <p>Al manipular listas con $ y [[]] se obtienen los objetos ahí almacenados, al manipular listas con [] se
+            obtiene una lista.</p><br>
+    </section>
+
+    <section>
+        <button type="button" class="boton-atras" href="capitulos.html">REGRESAR</button>
+        <button type="button" class="boton-practica" href="">REALIZAR PRACTICA</button>
+        <button type="button" class="boton-siguiente" href="">SIGUIENTE</button>
+    </section>
+
+</body>
+
+</html>
