@@ -10,7 +10,7 @@
 
   nav{
     background: #0082e6;
-    margin-top: -4.4%;
+    margin-top: -4%;
     position: fixed;
     height: 80px;
     width: 100%;
@@ -281,6 +281,19 @@
 
   /**contnido capitulo 1*/
 
+  .introduccion{
+    margin-top: 4%;
+    margin-left: 25%;
+  width: 50%;
+  height:auto;
+  text-align: justify;
+  }
+  .origen{
+    margin-left: -3%;
+    padding: 2%;
+  }
+
+  /*BOTONES DE LOS CONTENIDOS*/
   .boton-practica {
     text-decoration:none;
     margin-left: 75%;
@@ -339,14 +352,3 @@
   }
 
 
-.introduccion{
-  margin-top: 4%;
-  margin-left: 25%;
-width: 50%;
-height:auto;
-text-align: justify;
-}
-.origen{
-  margin-left: -3%;
-  padding: 2%;
-}
