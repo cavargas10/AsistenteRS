@@ -1,7 +1,7 @@
 
 body {
-  font-family: "Lato", sans-serif;
-}
+    font-family: "Lato", sans-serif;
+  }
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 *{
@@ -104,6 +104,7 @@ body {
   float: right;
   padding-right: 8px;
 }
+
 fa{
     display: inline-block;
     font: normal normal normal 14px/1 fontawesome;
@@ -121,25 +122,30 @@ i.fa-check.active{
     visibility: visible;
 }
 
-.introduccion{
-  margin-top: 4%;
-  margin-left: 35%;
-width: 50%;
-height:auto;
-text-align: justify;
-}
-.origen{
-  margin-left: -3%;
+  .introduccion{
+    margin-top: 4%;
+    margin-left: 25%;
+  width: 50%;
+  height:auto;
+  text-align: justify;
+  }
+  .origen{
+    margin-left: -3%;
+    padding: 2%;
+  }
+  .t{
+  margin-top: -4%;
   padding: 2%;
-}
-.t{
-margin-top: -4%;
-padding: 2%;
-}
+  }
 
-/* Some media queries for responsiveness */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
 
+  /* Some media queries for responsiveness */
+  @media screen and (max-height: 450px) {
+    .sidenav {
+      padding-top: 15px;
+    }
+
+    .sidenav a {
+      font-size: 18px;
+    }
+  }
