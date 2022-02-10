@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Responsive Navbar | CodingNepal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/tutoriales.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+</head>
+
+<body>
+    <nav>
+        <label class="logo">RLearning</label>
+        <ul>
+            <li><a href="principal.html">PRINCIPAL</a></li>
+            <li><a href="#">ACERCA DE</a></li>
+            <li><a href="principal_capitulos.html">CAPITULOS</a></li>
+            <li><a clase="active" href="principal_tutorial.html">TUTORIALES</a></li>
+            <li><a href="principal_Juegos.html">JUEGOS</a></li>
+            <li><a href="principal_RConsole.html">RConsola</a></li>
+            <li><a href="index.html">SALIR</a></li>
+        </ul>
+    </nav>
+    <h1 style="text-align:center" class="titulo">Leer Excel en R</h1>
+    <section class="introduccion"><br>
+        <p>Excel es una hoja de cálculo desarrollada por Microsoft, que permite administrar los datos de una manera muy
+            simple.
+            Hasta 2007, XLS era la extensión de archivo principal. Sin embargo, en la versión de 2007 se introdujo la
+            extensión
+            XLSX (basada en XML), para convertirse en el formato de libro de Excel predeterminado. En este tutorial
+            aprenderás
+            a leer un Excel en R y RStudio con varios paquetes.</p><br>
+        <h2 class="origen">¿Cómo importar archivos Excel en R?</h2>
+        <p>Para trabajar con datos de Excel en R deberás usar un paquete desarrollado para tal fin. Hay varias opciones,
+            pero los
+            mejores paquetes para leer archivos de Excel podrían ser openxlsx y readxl, ya que no dependen de JAVA
+            (a diferencia de los paquetes xlsx y XLConnect) ni de Perl (como el paquete gdata).</p><br>
+
+        <p>Ten en cuenta que las dependencias externas pueden causar errores al cargar los paquetes, pero para grandes
+            conjuntos de datos deberían ser más rápidos que las otras alternativas.</p><br>
+
+        <h2 class="origen">Importar datos de Excel en RStudio desde el menú</h2>
+        <h3 class="origen">El paquete readxl</h3>
+        <p>El paquete readxl forma parte del paquete tidyverse, creado por Hadley Wickham (científico jefe en RStudio)
+            y su equipo. Este paquete soporta XLS via la librería de C libxls y archivos XLSX via el paquete RapidXML
+            de C++, sin la necesidad de utilizar dependencias externas.</p><br>
+        <p>El paquete proporciona algunos archivos Excel (XLS y XLSX) de muestra almacenados en la carpeta de
+            instalación del paquete, por lo que con el objetivo de ofrecer un ejemplo reproducible, en los siguientes
+            ejemplos vamos a utilizar el archivo clippy.xlsx, cuya primera hoja es la siguiente:</p><br>
+
+        <img src="img/excel-file-sheet.png" alt="" class="img"><br><br>
+
+        <p>Para cargar la ruta del archivo Excel de muestra, puedes utilizar la función readxl_example. Una vez cargado,
+            o una vez que tengas la ruta de tu propio archivo Excel, puedes usar la función excel_sheets para obtener
+            los nombres de las hojas del archivo Excel, en caso de que lo necesites.</p><br>
+
+        <img src="img/excelcode1.png" alt="" class="img"><br><br>
+
+        <p>
+            La función genérica del paquete para leer archivos de Excel en R es la función read_excel, que ‘adivina’ el
+            tipo de archivo (XLS o XLSX) según la extensión del archivo y el archivo en sí, en ese orden.
+        </p>
+
+        <img src="img/excelcode2.png" alt="" class="img"><br><br>
+
+        <img src="img/excelcode3.png" alt="" class="img"><br><br>
+
+        <p>El argumento sheet permite especificar la hoja que quieres cargar, pasando su nombre o el número
+            correspondiente de
+            la pestaña. Ten en cuenta que, por defecto, la función carga la primera hoja de Excel.</p><br>
+
+        <img src="img/excelcode4.png" alt="" class="img"><br><br>
+        <img src="img/excelcode5.png" alt="" class="img"><br><br>
+
+        <p>
+            También puedes saltar filas con el argumento skip de la función:
+        </p><br>
+
+        <img src="img/excelcode6.png" alt="" class="img"><br><br>
+        <img src="img/excelcode7.png" alt="" class="img"><br><br>
+
+        <p>Ten en cuenta que también puedes especificar un rango de celdas con el argumento range. En este caso, el
+            argumento
+            skip no se tendrá en cuenta si lo especificas.</p><br>
+
+        <img src="img/excelcode8.png" alt="" class="img"><br><br>
+        <img src="img/excelcode9.png" alt="" class="img"><br><br>
+
+        <p>Además, si quieres evitar leer los nombres de las columnas, puedes establecer el argumento col_names como
+            FALSE:</p><br>
+
+        <img src="img/excelcode10.png" alt="" class="img"><br><br>
+        <img src="img/excelcode11.png" alt="" class="img"><br><br>
+
+        <p>Sin embargo, es posible que hayas notado que la salida es de clase tibble (un tipo moderno de data frame). Si
+            quieres que la salida sea de clase data.frame, deberás usar la función as.data.frame de la siguiente manera:
+        </p><br>
+
+        <img src="img/excelcode12.png" alt="" class="img"><br><br>
+        <img src="img/excelcode13.png" alt="" class="img"><br><br>
+
+        <p>Recuerda que la función read_excel ‘adivina’ la extensión de archivo. No obstante, si conoces la extensión
+            del archivo que vas a leer, puedes usar la función correspondiente de las siguientes para evitar ese proceso
+            de ‘adivinación’:</p><br>
+
+        <img src="img/excelcode14.png" alt="" class="img"><br><br>
+        <h3 class="origen">El paquete openxlsx</h3>
+        <p>El paquete openxlsx usa Rcpp y, como no depende de JAVA, es una alternativa interesante al paquete readxl
+            para leer un archivos Excel en R. Las diferencias respecto al paquete anterior son que la salida es de clase
+            data.frame por defecto en lugar de tibble y que su uso principal no es solo la importación de archivos de
+            Excel, ya que también proporciona una amplia variedad de funciones para escribir, diseñar y editar archivos
+            de Excel.</p><br>
+
+        <p>La función para leer archivos XLSX se llama read.xlsx:</p><br>
+
+        <img src="img/excelcode15.png" alt="" class="img"><br><br>
+        <img src="img/excelcode16.png" alt="" class="img"><br><br>
+
+        <p>Como en la función del paquete anterior, existen varios argumentos que puedes personalizar, como sheet, skip
+            o colNames. Si quieres seleccionar celdas específicas puedes usar los argumentos rows y cols. Recuerda
+            escribir ?read.xlsx o help(read.xlsx) para obtener información adicional.</p><br>
+
+        <img src="img/excelcode17.png" alt="" class="img"><br><br>
+        <img src="img/excelcode18.png" alt="" class="img"><br><br>
+
+        <h2 class="origen">El paquete xlsx</h2>
+        <p>Aunque este paquete requiere que JAVA esté instalado en tu ordenador, es muy popular. Las funciones
+            principales para importar archivos de Excel son read.xlsx y read.xlsx2. El segundo tiene ligeras diferencias
+            en los argumentos predeterminados y hace más trabajo en JAVA, logrando un mejor rendimiento.</p><br>
+
+        <img src="img/excelcode19.png" alt="" class="img"><br><br>
+
+        <p>Puedes personalizar diversos argumentos, como sheetIndex, sheetName, header, rowIndex, colIndex, entre otros.
+            Ejecuta ?read.xlsx o help(read.xlsx) para obtener detalles adicionales.</p><br>
+
+        <h2 class="origen">El paquete XLConnect</h2>
+        <p>Una alternativa al paquete xlsx es XLConnect, que permite escribir, leer y dar formato a archivos de Excel.
+            Para leer un Excel en R puedes usar la función readWorksheetFromFile como sigue. Recomendamos ejecutar
+            ??XLConnect para buscar información adicional de los argumentos de cada función del paquete.</p><br>
+
+        <img src="img/excelcode20.png" alt="" class="img"><br><br>
+
+        <p>En caso de que quieras cargar varias hojas, se recomienda utilizar la función loadWorkbook y luego cargar
+            cada hoja con la función readWorksheet:</p><br>
+
+        <img src="img/excelcode21.png" alt="" class="img"><br><br>
+
+        <p>Además, este paquete proporciona una función para cargar regiones con nombre de Excel. Análogo al ejemplo
+            anterior, puedes importar solo una región con readNamedRegionFromFile, especificando el nombre del archivo
+            (si el archivo está en tu directorio de trabajo) o la ruta del archivo y el nombre de la región en otro
+            caso.</p><br>
+
+        <img src="img/excelcode22.png" alt="" class="img"><br><br>
+
+        <p>Si quieres cargar varias regiones con nombre, puedes cargar el libro de Excel con la función loadWorkbook y
+            luego importar cada región con la función readNamedRegion..</p><br>
+
+        <img src="img/excelcode23.png" alt="" class="img"><br><br>
+
+        <p>Cabe mencionar que si tienes problemas con los paquetes que requieren JAVA, puedes obtener y establecer la
+            ruta de JAVA en R con los siguientes códigos:</p><br>
+
+        <img src="img/excelcode24.png" alt="" class="img"><br><br>
+
+        <p>Ten en cuenta que deberás especificar la ruta a la carpeta jre dentro de la carpeta Java de tu ordenador, que
+            por lo general se encontrará en Archivos de Programa.</p><br>
+
+        <h2 class="origen">Convertir archivos XLSX a CSV en R</h2>
+        <p>Por último, también podrías convertir tus archivos de Excel a formato CSV y leer el archivo CSV en R. Para
+            este propósito, puedes usar la función convert del paquete rio. Una alternativa sería guardar directamente
+            el archivo de Excel como CSV con el menú de Microsoft Excel.</p><br>
+
+        <img src="img/excelcode25.png" alt="" class="img"><br><br>
+    </section>
+
+
+</body>
+
+</html>

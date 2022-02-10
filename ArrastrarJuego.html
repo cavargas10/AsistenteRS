@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrastrar Juego</title>  
+  <link rel="stylesheet" href="./css/styleArrastrar.css">
+</head>
+<body>
+    <nav>
+        <label class="logo">RLearning</label>
+        <ul>
+            <li><a  href="index.html">PRINCIPAL</a></li>
+            <li><a href="#">ACERCA DE</a></li>
+            <li><a href="principal_capitulos.html">CAPITULOS</a></li>
+            <li><a href="principal_tutorial.html">TUTORIALES</a></li>
+            <li><a class="active" href="principal_Juegos.html">JUEGOS</a></li>
+            <li><a href="principal_RConsole.html">RConsola</a></li>
+        </ul>
+    </nav>
+    <br>
+  <h1>Arrastra y gana</h1>
+  <p>Arrastra el titulo hasta el concepto correspondiente</p>
+
+  <main class="container">
+    <div>
+      <ul class="draggable-list">
+        <li class="concepto" id="e1" draggable="true">Variables</li>
+        <li class="concepto" id="e2" draggable="true">Vectores</li>
+        <li class="concepto" id="e3" draggable="true">Matrices</li>
+        <li class="concepto" id="e4" draggable="true">Arreglos</li>
+        <li class="concepto" id="e5" draggable="true">Marco de datos</li>
+      </ul>
+    </div>
+    <div>
+      <ul class="draggable-list">
+        <li class="concepto" id="s2" draggable="true">Arreglos ordenados para almacenar información</li>
+        <li class="concepto" id="s5" draggable="true">Permite agrupar vectores con información diferente</li>
+        <li class="concepto" id="s1" draggable="true">Sirven para almacenar un valor que luego utilizaremos</li>
+        <li class="concepto" id="s3" draggable="true">Arreglos rectangulares de filas y columnas con información numérica</li>
+        <li class="concepto" id="s4" draggable="true">Matriz de varias dimensiones</li>
+      </ul>
+    </div>
+  </main>
+
+  <div id="endMessage">
+    <h3>¡Bien hecho!</h3>
+    <table>
+      <tr>
+        <th>Descripción</th>
+        <th>Concepto</th>
+      </tr>
+      <tr>
+        <td>Variables</td>
+        <td>Sirven para almacenar un valor que luego utilizaremos</td>
+      </tr>
+      <tr>
+        <td>Vectores</td>
+        <td>Arreglos ordenados para almacenar información</td>
+      </tr>
+      <tr>
+        <td>Matrices</td>
+        <td>Arreglos rectangulares de filas y columnas con información numérica</td>
+      </tr>
+      <tr>
+        <td>Arreglos</td>
+        <td>Matriz de varias dimensiones</td>
+      </tr>
+      <tr>
+        <td>Marco de datos</td>
+        <td>Permite agrupar vectores con información diferente</td>
+      </tr>
+    </table>
+    <button onclick="playAgain()">Jugar de Nuevo</button>
+    <button><a href="principal_Juegos.html" style="color:aliceblue">Regresar a Juegos</a></button>
+  </div>
+  <script src="scriptArrastrar.js"></script>
+
+  
+</body>
+</html>
