@@ -9,9 +9,12 @@
   }
 
  nav{
-    background: #0082e6;
-    height: 80px;
-    width: 100%;
+  background: #0082e6;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  margin-top: -110px;
   }
   label.logo{
     color: white;
