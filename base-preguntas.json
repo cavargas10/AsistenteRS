@@ -1,0 +1,58 @@
+[
+
+    {
+        "categoria":"Tipos de Objetos",
+        "pregunta": "Construya un vector con la primeras 20 letras MAYÚSCULAS usando la función LETTERS.",
+        "respuesta": "letras<-LETTERS[1:20] length(letras)letras",
+        "incorrecta1":"miarray <- array(data=letters[1:24],dim=c(3, 4, 2))",
+        "incorrecta2":"",
+        "incorrecta3":"",
+        "imagen":"img/preguntas.jpeg",
+        "object_fit":"cover"
+    },
+    {
+        "categoria":"Tipos de Objetos",
+        "pregunta": "Construya una matriz de 10 × 10 con los primeros 100 números positivos pares",
+        "respuesta": " matrizz<-matrix(data = 1:100*2,nrow =10, ncol =10, byrow = TRUE)matrizz",
+        "incorrecta1":"",
+        "incorrecta2":"",
+        "incorrecta3":"",
+        "imagen":"img/preguntas.jpeg",
+        "object_fit":"cover"
+    },
+    {
+        "categoria":"Tipos de Objetos",
+        "pregunta": "Construya una matriz identidad de dimension 3×3. Recuerde que una matriz identidad tiene sólo unos",
+        "respuesta": "diagonal <- diag(1,3,3) diagonal",
+        "incorrecta1":"",
+        "incorrecta2":"",
+        "incorrecta3":"",
+        "imagen":"img/preguntas.jpeg",
+        "object_fit":"cover"
+    },
+    {
+        "categoria":"Tipos de Objetos",
+        "pregunta": "Construya una lista con los anteriores tres objetos creados",
+        "respuesta": "milista<-list(E1=letras,E2=matrizz,E3=diagonal)milistaLista<-list(letras,matrizz,diagonal)Lista",
+        "incorrecta1":"",
+        "incorrecta2":"",
+        "incorrecta3":"",
+        "imagen":"img/preguntas.jpeg",
+        "object_fit":"cover"
+    },
+    {
+        "categoria":"Tipos de Objetos",
+        "pregunta": "Construya un marco de datos o data frame con las respuestas de 3 # personas a las preguntas: (a) ¿Cuál es su edad en años? (b) ¿Tipo # de música que más le gusta? (c) ¿Tiene usted pareja sentimental estable?",
+        "respuesta": "edadEnAños <- c(2000, 1976, 1997, 1983, 2003) tipoMusicaFavorita <- c('salsa', 'merengue', 'rock', 'vallenato', 'Hip Hop')parejaSentimentalEstable <- c('NO', 'SI', 'SI', 'NO', 'NO'",
+        "incorrecta1":"",
+        "incorrecta2":"",
+        "incorrecta3":"",
+        "imagen":"img/preguntas.jpeg",
+        "object_fit":"cover"
+    }
+    
+
+
+    
+    
+]

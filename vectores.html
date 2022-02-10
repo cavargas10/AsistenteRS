@@ -17,13 +17,11 @@
       <li><a href="#">ACERCA DE</a></li>
       <li><a class="active" href="principal_capitulos.html">CAPITULOS</a></li>
       <li><a href="principal_tutorial.html">TUTORIALES</a></li>
-      <li><a href="principal_Juegos.html">JUEGOS</a></li>
-      <li><a href="principal_RConsole.html">RConsola</a></li>
+      <li><a href="#">JUEGOS</a></li>
+      <li><a href="#">RConsola</a></li>
     </ul>
   </nav>
 </body>
-
-</head>
 
 <section>
 
@@ -57,6 +55,7 @@
       <a href="listas.html">2.6 Listas</a>
       <a href="Ejercicio.html">EJERCICIOS</a>
       <a href="Ejercicio.html">Evaluación</a>
+      
     </div>
 
     <button class="dropdown-btn">3. GUIA DE ESTILO
@@ -314,29 +313,82 @@
 </section>
 
 <section class="introduccion">
-  <h1><br>1. INTRODUCCION</h1>
-  <h2 class="origen">1.1 ORIGENES</h2>
-  <p>R es un lenguaje de programación usado para realizar procedimientos estadísticos
-    y gráficos de alto nivel, este lenguaje fue creado en 1993 por los profesores e
-    investigadores Robert Gentleman y Ross Ihaka. Inicialmente el lenguaje se usó para a
-    poyar los cursos que tenían a su cargo los profesores, pero luego de ver la utilidad
-    de la herramienta desarrollada, decidieron colocar copias de R en StatLib. A partir
-    de 1995 el código fuente de R está disponible bajo licencia GNU GPL para sistemas
-    operativos Windows, Macintosh y distribuciones Unix/Linux. La comunidad de usuarios
-    de R en el mundo es muy grande y los usuarios cuentan con diferentes espacios para
-    interactuar, a continuación una lista no exhaustiva de los sitios más populares
-    relacionados con R:</p><br>
+  <h1><br>2.2 Vectores</h1>
+  <h2 class="origen">2.1Variables</h2>
+  <p>Los vectores vectores son arreglos ordenados en los cuales se puede
+       almacenar información de tipo numérico (variable cuantitativa), 
+       alfanumérico (variable cualitativa) o lógico (TRUE o FALSE), pero 
+       no mezclas de éstos. La función de R para crear un vector es c() y
+        que significa concatenar; dentro de los paréntesis de esta función 
+        se ubica la información a almacenar. Una vez construído el vector se 
+        acostumbra a etiquetarlo con un nombre corto y representativo de la 
+        información que almacena, la asignación se hace por medio del operador
+         <- entre el nombre y el vector.</p><br>
 
-  <ul>
-    <li><u><a href="https://www.r-bloggers.com/"> - Rbloggers.</a></u></li>
-    <li><a href="http://r-es.org/"> - RDataMining.- Comunidad hispana de R.</a></li>
-    <li><a href="https://stackoverflow.com/questions/tagged/r"> - Stackoverflow.</a></li>
-    <li><a href="https://stats.stackexchange.com/questions/tagged/r"> - Cross Validated.</a></li>
-    <li><a href="https://stat.ethz.ch/mailman/listinfo/r-help"> - R-Help Mailing List.</a></li>
-    <li><a href="https://blog.revolutionanalytics.com/"> - Revolutions.</a></li>
-    <li><a href="https://rdatamining.wordpress.com/"> - R-statistics blog.</a></li>
-  </ul>
-</section>
+    <p>A continuación se presenta un ejemplo de cómo crear tres vectores que contienen las respuestas de cinco personas a tres preguntas que se les realizaron.</p>
+     <br>
+
+    <p>edad <- c(15, 19, 13, NA, 20)</p>
+    <p>deporte <- c(TRUE, TRUE, NA, FALSE, TRUE)</p>
+    <p>comic_fav <- c(NA, 'Superman', 'Batman', NA, 'Batman')</p>
+    <br>
+    <p>El vector edad es un vector cuantitativo y 
+        contiene las edades de las 5 personas. 
+        En la cuarta posición del vector se colocó
+         el símbolo NA que significa Not Available ebido
+          a que no se registró la edad para esa persona.
+          Al hacer una asignación se acostumbra a dejar 
+          un espacio antes y después del operador <- de
+           asignación. El segundo vector es llamado deporte 
+           y es un vector lógico que almacena las respuestas 
+           a la pregunta de si la persona practica deporte, 
+           nuevamente aquí hay un NA para la tercera persona.
+            El último vector comic_fav contiene la información
+             del cómic favorito de cada persona, como esta variable 
+             es cualitativa es necesario usar las comillas ' ' para
+             encerrar las respuestas.</p>
+
+             <br>
+             <p>Cuando se usa NA para representar una información Not Available no se deben usar comillas</p>
+        <br>
+        <p>Es posible usar comillas sencillas 'foo' o comillas dobles "foo" para ingresar valores de una variable cualitativa.</p>
+        <br>
+        <p>Si se desea ver lo que está almacenado en cada uno de estos vectores, se debe escribir en la consola de R el nombre de uno de los objetos y luego se presiona la tecla enter o intro, al realizar esto lo que se obtiene se muestra a continuación.</p>
+        <br>
+        <p>edad</p>
+        <p>## [1] 15 19 13 NA 20</p>
+        <p>deporte</p>
+        <p>## [1]  TRUE  TRUE    NA FALSE  TRUE</p>
+        <p>comic_fav</p>
+        <p>## [1] NA         "Superman" "Batman"   NA         "Batman"</p>
+            
+        <h2 class="origen">2.2.1 ¿Cómo extraer elementos de un vector?</h2>
+        <br>
+        <p>Para extraer un elemento almacenado dentro un vector se usan los corchetes [] y dentro de ellos la posición o posiciones que interesan</p>
+   
+        <h2 class="origen">Ejemplo</h2>
+        <p>
+            Si queremos extraer la edad de la tercera persona escribimos el nombre del vector y luego [3] para indicar la tercera posición de edad, a continuación el código.
+        </p>
+        <br>
+        <p>edad[3]</p>
+        <p> ##[1]13</p>
+        <br>
+        <p>Si queremos conocer el cómic favorito de la segunda y quinta persona, escribimos el nombre del vector y luego, dentro de los corchetes, escribimos otro vector con las posiciones 2 y 5 que nos interesan así [c(2, 5)], a continuación el código.</p>
+    
+        <br>
+        <p>comic_fav[c(2, 5)]</p>
+        <p>## [1] "Superman" "Batman"</p>
+        <br>   
+        <p>Si nos interesan las respuestas de la práctica de deporte, excepto la de la persona 3, usamos [-3] luego del nombre del vector para obtener todo, excepto la tercera posición.</p>
+        <br>
+        <p>deporte[-3]</p>
+        <p>## [1]  TRUE  TRUE FALSE  TRUE</p>
+        <br>
+        <p>Si desea extraer varios posiciones de un vector NUNCA escriba esto: mivector[2, 5, 7]. Tiene que crear un vector con las posiciones y luego colocarlo dentro de los corchetes así: mivector[c(2, 5, 7)</p>
+        <br>
+        <br>
+    </section>
 
 
 <script>
@@ -374,6 +426,7 @@
   }
   btn.addEventListener('click', cambio, true)
 </script>
+
 
 
 <i> </i>
