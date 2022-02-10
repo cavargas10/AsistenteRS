@@ -7,7 +7,8 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
   }
-  nav{
+
+ nav{
     background: #0082e6;
     height: 80px;
     width: 100%;
@@ -39,3 +40,42 @@
     background: #1b9bff;
     transition: .5s;
   }
+
+.izquierdo{
+
+    margin-top: 10%;
+    height: 10%;
+    width: 50%;
+  }
+  
+  .logo1{
+  
+      width: 70%;
+    margin-left: 20%;
+
+  }
+
+  .derecho{
+
+    margin-left: 50%;
+    margin-top: -30%;
+    height: 20%;
+    width: 40%;
+  }
+
+  h1{
+    font-size: 70px;
+  }
+
+  h3{
+    font-size: 25px;
+  }
+
+  h4{
+    font-size: 17px;
+  }
+
+  body{
+    background-image: linear-gradient(to right, #0082e6,white,white);
+}
+
